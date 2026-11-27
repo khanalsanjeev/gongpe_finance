@@ -1,0 +1,8 @@
+# robots.txt for Gongpe Consulting
+# https://consulting.gongpe.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://consulting.gongpe.com/sitemap.xml

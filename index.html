@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142D4E">
+  <meta name="description" content="Gongpe Consulting helps businesses strengthen financial visibility, improve operational systems and make informed business decisions. Part of Gongpe Group, Kathmandu, Nepal.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Gongpe Consulting">
+  <meta name="geo.region" content="NP-BA">
+  <meta name="geo.placename" content="Kathmandu">
+  <title>Gongpe Consulting | A Practice of Gongpe Group</title>
+
+  <!-- Canonical (this site lives on the consulting subdomain) -->
+  <link rel="canonical" href="https://consulting.gongpe.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gongpe Consulting | A Practice of Gongpe Group">
+  <meta property="og:description" content="Gongpe Consulting helps businesses strengthen financial visibility, improve operational systems and make informed business decisions. Part of Gongpe Group, Kathmandu, Nepal.">
+  <meta property="og:url" content="https://consulting.gongpe.com/">
+  <meta property="og:site_name" content="Gongpe Consulting">
+  <meta property="og:locale" content="en_NP">
+  <meta property="og:image" content="https://consulting.gongpe.com/assets/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gongpe Consulting | A Practice of Gongpe Group">
+  <meta name="twitter:description" content="Gongpe Consulting helps businesses strengthen financial visibility, improve operational systems and make informed business decisions. Part of Gongpe Group, Kathmandu, Nepal.">
+  <meta name="twitter:image" content="https://consulting.gongpe.com/assets/og-image.jpg">
+
+  <!-- Structured Data: Organization + LocalBusiness (connects to main Gongpe Group) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+    "name": "Gongpe Consulting",
+    "alternateName": "Gongpe Consulting – A Practice of Gongpe Group",
+    "url": "https://consulting.gongpe.com/",
+    "logo": "https://consulting.gongpe.com/assets/favicon.png",
+    "description": "Financial and business consulting practice helping businesses strengthen financial visibility, improve operational systems and make informed business decisions.",
+    "foundingLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kathmandu",
+      "addressCountry": "NP"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Nepal"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Gongpe Group",
+      "url": "https://gongpe.com/"
+    },
+    "sameAs": [
+      "https://gongpe.com/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@gongpe.com",
+      "availableLanguage": ["English", "Nepali"]
+    },
+    "knowsAbout": [
+      "Financial Modelling",
+      "Business Analysis",
+      "Accounting Systems",
+      "Financial Information Organisation",
+      "Business Consulting"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            navy: '#142D4E',
+            ink: '#202B3A',
+            indigo: '#465D91',
+            paper: '#F7F9FC',
+            mist: '#EAF0F7'
+          },
+          boxShadow: {
+            soft: '0 16px 40px rgba(20,45,78,.08)',
+            card: '0 8px 24px rgba(20,45,78,.06)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; color: #334155; }
+    .grid-pattern {
+      background-image: linear-gradient(rgba(20,45,78,.045) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(20,45,78,.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to right, black, transparent 90%);
+    }
+    .eyebrow { letter-spacing: .14em; }
+    .nav-link { transition: color .2s ease; }
+    .nav-link:hover { color: #142D4E; }
+    .service-card { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(20,45,78,.09); border-color: #B8C8DB; }
+    .icon-box { background: #EDF3F9; color: #24476F; }
+    .focus-ring:focus-visible { outline: 3px solid #8BA9CC; outline-offset: 3px; }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.2s ease;
+      opacity: 0;
+    }
+    .accordion-content.open {
+      max-height: 220px;
+      opacity: 1;
+    }
+    .accordion-trigger .chevron {
+      transition: transform 0.25s ease;
+    }
+    .accordion-trigger[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-white antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8">
+      <a href="#home" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Gongpe Consulting home">
+        <img src="assets/favicon.png" alt="Gongpe Consulting" width="40" height="40" class="h-10 w-10 rounded-lg object-contain">
+        <span class="block leading-tight">
+          <span class="block text-[15px] font-extrabold tracking-[.07em] text-navy">GONGPE <span class="font-semibold text-indigo">CONSULTING</span></span>
+          <span class="mt-1 block text-[9px] font-semibold uppercase tracking-[.18em] text-slate-500">A Practice of Gongpe Group</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
+        <a class="nav-link text-sm font-medium text-slate-600" href="#capabilities">Capabilities</a>
+        <a class="nav-link text-sm font-medium text-slate-600" href="#approach">Our Approach</a>
+        <a class="nav-link text-sm font-medium text-slate-600" href="#practice">The Practice</a>
+        <a class="nav-link text-sm font-medium text-slate-600" href="#insights">Insights</a>
+        <a href="#contact" class="focus-ring rounded-md bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo">Discuss a Requirement</a>
+      </nav>
+
+      <button id="menuButton" class="focus-ring rounded-md p-2 text-navy lg:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+        <svg id="menuOpenIcon" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="menuCloseIcon" class="hidden" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-5 py-4 lg:hidden" aria-label="Mobile navigation">
+      <div class="mx-auto flex max-w-7xl flex-col gap-1">
+        <a class="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-paper" href="#capabilities">Capabilities</a>
+        <a class="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-paper" href="#approach">Our Approach</a>
+        <a class="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-paper" href="#practice">The Practice</a>
+        <a class="rounded-md px-3 py-3 text-sm font-medium text-slate-700 hover:bg-paper" href="#insights">Insights</a>
+        <a class="mt-2 rounded-md bg-navy px-3 py-3 text-center text-sm font-semibold text-white" href="#contact">Discuss a Requirement</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="relative isolate overflow-hidden border-b border-slate-200 bg-paper">
+      <div class="grid-pattern pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] lg:block"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[1.08fr_.92fr] lg:gap-16 lg:py-28">
+        <div class="max-w-2xl">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[.13em] text-slate-600 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-indigo"></span>
+            Financial & Business Consulting · Kathmandu, Nepal
+          </div>
+          <h1 class="text-[2.65rem] font-bold leading-[1.12] tracking-[-.045em] text-navy sm:text-5xl lg:text-[3.65rem]">
+            Financial clarity.<br><span class="text-indigo">Better business decisions.</span>
+          </h1>
+          <p class="mt-7 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+            We work with businesses to strengthen financial visibility, improve operational systems and support informed business decisions.
+          </p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="focus-ring inline-flex items-center justify-center gap-3 rounded-md bg-navy px-6 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo">
+              Discuss a Requirement <span aria-hidden="true">→</span>
+            </a>
+            <a href="#capabilities" class="focus-ring inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-4 text-sm font-semibold text-navy transition hover:border-navy hover:bg-slate-50">
+              Explore Capabilities
+            </a>
+          </div>
+          <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-indigo"></span> Finance-led perspective</span>
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-indigo"></span> Practical business systems</span>
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-indigo"></span> Nepal business context</span>
+          </div>
+        </div>
+
+        <!-- Abstract financial composition -->
+        <div class="relative mx-auto w-full max-w-[540px]">
+          <div class="absolute -right-5 -top-5 h-32 w-32 rounded-full bg-blue-100/70 blur-2xl"></div>
+          <div class="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-7">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-5">
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-[.17em] text-slate-400">Business performance</p>
+                <p class="mt-1 text-sm font-semibold text-navy">A clearer view of the business</p>
+              </div>
+              <span class="rounded-md bg-paper px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">Illustrative</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 py-5">
+              <div class="rounded-lg bg-paper p-4">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Financial position</p>
+                <div class="mt-3 flex items-end gap-1.5">
+                  <span class="h-5 w-3 rounded-sm bg-indigo/40"></span><span class="h-8 w-3 rounded-sm bg-indigo/60"></span><span class="h-6 w-3 rounded-sm bg-indigo/50"></span><span class="h-11 w-3 rounded-sm bg-indigo"></span><span class="h-9 w-3 rounded-sm bg-indigo/70"></span>
+                </div>
+                <p class="mt-3 text-xs font-medium text-slate-600">Structured information</p>
+              </div>
+              <div class="rounded-lg bg-paper p-4">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Business outlook</p>
+                <svg class="mt-2 h-12 w-full" viewBox="0 0 150 48" fill="none" aria-label="Illustrative upward trend">
+                  <path d="M2 39 C22 34 25 36 42 27 S70 31 87 18 S115 21 148 5" stroke="#465D91" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M2 39 C22 34 25 36 42 27 S70 31 87 18 S115 21 148 5 L148 48 L2 48Z" fill="#465D91" opacity=".08"/>
+                </svg>
+                <p class="mt-2 text-xs font-medium text-slate-600">Informed projections</p>
+              </div>
+            </div>
+            <div class="rounded-lg border border-slate-200 p-4">
+              <div class="mb-4 flex items-center justify-between">
+                <p class="text-xs font-semibold text-navy">From information to action</p>
+                <span class="text-[10px] text-slate-400">Our working lens</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="rounded-md bg-paper px-2 py-3 text-center">
+                  <span class="mx-auto flex h-7 w-7 items-center justify-center rounded-md bg-white text-xs font-bold text-indigo shadow-sm">01</span>
+                  <p class="mt-2 text-[10px] font-semibold text-slate-600">Understand</p>
+                </div>
+                <div class="rounded-md bg-paper px-2 py-3 text-center">
+                  <span class="mx-auto flex h-7 w-7 items-center justify-center rounded-md bg-white text-xs font-bold text-indigo shadow-sm">02</span>
+                  <p class="mt-2 text-[10px] font-semibold text-slate-600">Structure</p>
+                </div>
+                <div class="rounded-md bg-paper px-2 py-3 text-center">
+                  <span class="mx-auto flex h-7 w-7 items-center justify-center rounded-md bg-white text-xs font-bold text-indigo shadow-sm">03</span>
+                  <p class="mt-2 text-[10px] font-semibold text-slate-600">Improve</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -left-5 hidden rounded-xl bg-navy px-5 py-4 text-white shadow-soft sm:block">
+            <p class="text-[10px] font-semibold uppercase tracking-[.16em] text-blue-200">Our focus</p>
+            <p class="mt-1 text-sm font-semibold">Finance · Systems · Decisions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Positioning strip -->
+    <section class="border-b border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-5 py-8 sm:px-8 md:grid-cols-3 md:gap-10">
+        <!-- Financial visibility - new distinct icon (eye / visibility) -->
+        <div class="flex items-start gap-4">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mist text-navy">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </span>
+          <div>
+            <h2 class="text-sm font-bold text-navy">Financial visibility</h2>
+            <p class="mt-1 text-xs leading-5 text-slate-500">Make financial information more useful, consistent and decision-ready.</p>
+          </div>
+        </div>
+        <!-- Operational structure - keep document icon -->
+        <div class="flex items-start gap-4">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mist text-navy">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M8 8h8M8 12h8M8 16h4"/>
+            </svg>
+          </span>
+          <div>
+            <h2 class="text-sm font-bold text-navy">Operational structure</h2>
+            <p class="mt-1 text-xs leading-5 text-slate-500">Connect financial processes, information and day-to-day operations.</p>
+          </div>
+        </div>
+        <!-- Informed decisions - new distinct icon (target / decision) -->
+        <div class="flex items-start gap-4">
+          <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mist text-navy">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+          </span>
+          <div>
+            <h2 class="text-sm font-bold text-navy">Informed decisions</h2>
+            <p class="mt-1 text-xs leading-5 text-slate-500">Translate analysis into practical choices and priorities for management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities" class="scroll-mt-24 bg-paper py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="max-w-2xl">
+          <p class="eyebrow text-[10px] font-bold uppercase text-indigo">01 / Capabilities</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Practical support across business finance.</h2>
+          <p class="mt-5 text-sm leading-7 text-slate-600 sm:text-base">Our work brings together financial analysis, information and operational thinking to address the requirements behind better business decisions.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2">
+          <!-- 01 Financial Modelling - new distinct icon (calculator / model) -->
+          <article class="service-card rounded-xl border border-slate-200 bg-white p-7 sm:p-8">
+            <div class="flex items-start justify-between">
+              <span class="icon-box flex h-12 w-12 items-center justify-center rounded-lg">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                  <path d="M8 6h8M8 10h8M8 14h4M14 14h2M8 18h2M12 18h4"/>
+                </svg>
+              </span>
+              <span class="text-[10px] font-bold tracking-[.15em] text-slate-400">01</span>
+            </div>
+            <h3 class="mt-6 text-lg font-bold text-navy">Financial Modelling & Financing Support</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Translate business assumptions into structured projections for revenue, costs, working capital, cash flow and funding requirements. Prepare financial analysis to support financing discussions and evaluate repayment capacity.</p>
+            <p class="mt-5 border-t border-slate-100 pt-4 text-xs font-semibold text-indigo">Useful for planning, funding and financial evaluation.</p>
+          </article>
+
+          <!-- 02 Business Analysis - keep the original chart icon as requested -->
+          <article class="service-card rounded-xl border border-slate-200 bg-white p-7 sm:p-8">
+            <div class="flex items-start justify-between">
+              <span class="icon-box flex h-12 w-12 items-center justify-center rounded-lg">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <path d="M4 19V5m0 14h16M7 15l3-4 3 2 5-7"/>
+                  <circle cx="18" cy="6" r="1.5"/>
+                </svg>
+              </span>
+              <span class="text-[10px] font-bold tracking-[.15em] text-slate-400">02</span>
+            </div>
+            <h3 class="mt-6 text-lg font-bold text-navy">Business Analysis & Decision Support</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Review financial and operational information to understand how a business generates and uses resources. Identify performance issues, examine key drivers and prepare practical analysis for management discussions.</p>
+            <p class="mt-5 border-t border-slate-100 pt-4 text-xs font-semibold text-indigo">Useful for performance reviews and management decisions.</p>
+          </article>
+
+          <!-- 03 Accounting Systems -->
+          <article class="service-card rounded-xl border border-slate-200 bg-white p-7 sm:p-8">
+            <div class="flex items-start justify-between">
+              <span class="icon-box flex h-12 w-12 items-center justify-center rounded-lg">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1"/>
+                  <path d="M6.5 10v4a2 2 0 0 0 2 2H14"/>
+                </svg>
+              </span>
+              <span class="text-[10px] font-bold tracking-[.15em] text-slate-400">03</span>
+            </div>
+            <h3 class="mt-6 text-lg font-bold text-navy">Accounting Systems & Process Design</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Design information structures, accounting processes and operational workflows that connect financial logic with day-to-day business activity. Clarify responsibilities, improve consistency and strengthen internal processes.</p>
+            <p class="mt-5 border-t border-slate-100 pt-4 text-xs font-semibold text-indigo">Useful for process clarity and reliable operations.</p>
+          </article>
+
+          <!-- 04 Financial Information Organisation -->
+          <article class="service-card rounded-xl border border-slate-200 bg-white p-7 sm:p-8">
+            <div class="flex items-start justify-between">
+              <span class="icon-box flex h-12 w-12 items-center justify-center rounded-lg">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                  <path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3 2 0 3.8-.3 5.2-.8"/>
+                </svg>
+              </span>
+              <span class="text-[10px] font-bold tracking-[.15em] text-slate-400">04</span>
+            </div>
+            <h3 class="mt-6 text-lg font-bold text-navy">Financial Information Organisation</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Bring structure to incomplete, fragmented or inconsistent financial records. Improve the completeness and reliability of financial information so that management can work from a clearer picture.</p>
+            <p class="mt-5 border-t border-slate-100 pt-4 text-xs font-semibold text-indigo">Useful for financial clean-up and reporting readiness.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="approach" class="scroll-mt-24 bg-white py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+          <div>
+            <p class="eyebrow text-[10px] font-bold uppercase text-indigo">02 / Our Approach</p>
+            <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">A structured way to move work forward.</h2>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Our approach starts with understanding the business before shaping a solution. We focus on work that can be applied, evaluated and improved in the operating environment.</p>
+            <div class="mt-8 rounded-xl bg-navy p-6 text-white">
+              <p class="text-[10px] font-bold uppercase tracking-[.17em] text-blue-200">Our operating framework</p>
+              <p class="mt-3 text-2xl font-bold tracking-[.12em]">O R B I T</p>
+              <p class="mt-2 text-sm leading-6 text-slate-300">A disciplined cycle of understanding, developing and improving practical business solutions.</p>
+            </div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-slate-200 p-6">
+              <span class="text-xs font-bold text-indigo">01</span>
+              <h3 class="mt-4 font-bold text-navy">Observe</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Understand the business, its operating environment and the requirements behind the engagement.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-6">
+              <span class="text-xs font-bold text-indigo">02</span>
+              <h3 class="mt-4 font-bold text-navy">Recognise</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Identify the key issues, constraints and opportunities that require attention.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-6">
+              <span class="text-xs font-bold text-indigo">03</span>
+              <h3 class="mt-4 font-bold text-navy">Build</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Develop an appropriate model, process, information structure or practical solution.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-6">
+              <span class="text-xs font-bold text-indigo">04</span>
+              <h3 class="mt-4 font-bold text-navy">Implement</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Put the agreed solution into practice with clear responsibilities and usable outputs.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-6 sm:col-span-2">
+              <span class="text-xs font-bold text-indigo">05</span>
+              <h3 class="mt-4 font-bold text-navy">Transform</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Review what works, learn from use and refine the solution as business requirements evolve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who we work with - reordered as requested -->
+    <section class="border-y border-slate-200 bg-paper py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="max-w-2xl">
+          <p class="eyebrow text-[10px] font-bold uppercase text-indigo">03 / Business Context</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Support shaped around the business.</h2>
+          <p class="mt-5 text-sm leading-7 text-slate-600">Different businesses face different financial and operational questions. We shape our work around the context, information and priorities of each engagement.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <!-- 01 New ventures & projects -->
+          <article class="rounded-xl border border-slate-200 bg-white p-7">
+            <p class="text-xs font-bold uppercase tracking-[.13em] text-indigo">01</p>
+            <h3 class="mt-5 text-lg font-bold text-navy">New ventures & projects</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Founders and project teams requiring financial models, structured assumptions and practical systems for the next stage of development.</p>
+          </article>
+          <!-- 02 Growing enterprises -->
+          <article class="rounded-xl border border-slate-200 bg-white p-7">
+            <p class="text-xs font-bold uppercase tracking-[.13em] text-indigo">02</p>
+            <h3 class="mt-5 text-lg font-bold text-navy">Growing enterprises</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Businesses seeking stronger financial visibility, structured reporting and more dependable operating processes as they grow.</p>
+          </article>
+          <!-- 03 Established businesses -->
+          <article class="rounded-xl border border-slate-200 bg-white p-7">
+            <p class="text-xs font-bold uppercase tracking-[.13em] text-indigo">03</p>
+            <h3 class="mt-5 text-lg font-bold text-navy">Established businesses</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Organisations reviewing performance, evaluating funding requirements or improving the way financial information supports management.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section id="practice" class="scroll-mt-24 bg-white py-20 sm:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
+        <div>
+          <p class="eyebrow text-[10px] font-bold uppercase text-indigo">04 / The Practice</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Financial thinking, connected to how business operates.</h2>
+          <p class="mt-5 text-sm leading-7 text-slate-600">Gongpe Consulting is a financial and business consulting practice based in Kathmandu, Nepal. Our work brings together finance, analysis and systems thinking to help businesses organise information, understand performance and address practical operating requirements.</p>
+          <p class="mt-4 text-sm leading-7 text-slate-600">We take a collaborative approach to each engagement, working to understand the context before recommending or developing a solution.</p>
+          <a href="#contact" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-indigo hover:text-navy">Start a discussion <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="rounded-2xl bg-navy p-8 text-white sm:p-10">
+          <p class="text-[10px] font-bold uppercase tracking-[.17em] text-blue-200">A Practice of Gongpe Group</p>
+          <h3 class="mt-5 text-2xl font-bold leading-snug">A consulting practice within a broader group built around business activity and progress.</h3>
+          <p class="mt-5 text-sm leading-7 text-slate-300">Gongpe Consulting focuses on financial and business consulting. The wider Gongpe Group provides the institutional context for the practice and its future development.</p>
+          <div class="mt-8 border-t border-white/15 pt-6">
+            <p class="text-xs font-semibold text-blue-100">GONGPE CONSULTING</p>
+            <p class="mt-1 text-xs text-slate-300">Kathmandu, Nepal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights - accordion style -->
+    <section id="insights" class="scroll-mt-24 border-y border-slate-200 bg-paper py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div class="max-w-2xl">
+            <p class="eyebrow text-[10px] font-bold uppercase text-indigo">05 / Insights</p>
+            <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Perspectives on finance and business.</h2>
+            <p class="mt-4 text-sm leading-7 text-slate-600">Practical observations and resources on financial information, business performance and operating systems.</p>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          <!-- Accordion 1 -->
+          <article class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+            <button type="button" class="accordion-trigger focus-ring flex w-full items-start justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="insight-1" id="insight-btn-1">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[.14em] text-indigo">Financial Information</span>
+                <h3 class="mt-3 text-lg font-bold text-navy">Making incomplete financial records more useful</h3>
+              </div>
+              <span class="chevron mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-paper text-navy">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </span>
+            </button>
+            <div id="insight-1" class="accordion-content px-6" role="region" aria-labelledby="insight-btn-1">
+              <div class="border-t border-slate-100 pt-3 pb-6">
+                <p class="text-sm leading-6 text-slate-600">Many growing businesses work with partial or inconsistent records. The starting point is a structured view of what exists, what is missing, and which decisions the current information can support. A practical clean-up focuses on completeness, consistent classification and a clearer picture of cash, receivables and key cost drivers.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Accordion 2 -->
+          <article class="rounded-xl border border-slate-200 bg-white overflow-hidden">
+            <button type="button" class="accordion-trigger focus-ring flex w-full items-start justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="insight-2" id="insight-btn-2">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[.14em] text-indigo">Financial Modelling</span>
+                <h3 class="mt-3 text-lg font-bold text-navy">Preparing financial projections for financing discussions</h3>
+              </div>
+              <span class="chevron mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-paper text-navy">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </span>
+            </button>
+            <div id="insight-2" class="accordion-content px-6" role="region" aria-labelledby="insight-btn-2">
+              <div class="border-t border-slate-100 pt-3 pb-6">
+                <p class="text-sm leading-6 text-slate-600">Useful projections rest on clear assumptions, realistic working-capital needs and transparent cash-flow timing. Lenders look for coherent logic, sensitivity to key drivers and evidence of repayment capacity. The goal is a structured model that supports informed discussion of funding size, use of funds and repayment profile.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="scroll-mt-24 bg-white py-20 sm:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+        <div>
+          <p class="eyebrow text-[10px] font-bold uppercase text-indigo">06 / Contact</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Let's discuss your business requirements.</h2>
+          <p class="mt-5 max-w-md text-sm leading-7 text-slate-600">Tell us what your business is working through. We can begin with a discussion to understand the requirement and determine whether our capabilities are a suitable fit.</p>
+          <div class="mt-9 space-y-5 border-t border-slate-200 pt-7">
+            <div class="flex gap-4">
+              <span class="icon-box flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+              </span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Location</p>
+                <p class="mt-1 text-sm font-medium text-navy">Kathmandu, Nepal</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <span class="icon-box flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <path d="M4 5h16v14H4z"/>
+                  <path d="m4 7 8 6 8-6"/>
+                </svg>
+              </span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Enquiries</p>
+                <p class="mt-1 text-sm text-slate-600">Use the enquiry form to outline your requirement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-paper p-6 sm:p-9">
+          <h3 class="text-lg font-bold text-navy">Tell us about your requirement</h3>
+          <p class="mt-2 text-xs leading-5 text-slate-500">Complete the details below. Your email application will open with a prepared enquiry for you to review and send.</p>
+          <form id="enquiryForm" class="mt-7 space-y-5">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class="mb-2 block text-xs font-semibold text-slate-700">Your name <span class="text-rose-600">*</span></label>
+                <input id="name" name="name" required autocomplete="name" class="focus-ring w-full rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-800 placeholder:text-slate-400" placeholder="Full name">
+              </div>
+              <div>
+                <label for="company" class="mb-2 block text-xs font-semibold text-slate-700">Organisation</label>
+                <input id="company" name="company" autocomplete="organization" class="focus-ring w-full rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-800 placeholder:text-slate-400" placeholder="Company or organisation">
+              </div>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="email" class="mb-2 block text-xs font-semibold text-slate-700">Email address <span class="text-rose-600">*</span></label>
+                <input id="email" name="email" type="email" required autocomplete="email" class="focus-ring w-full rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-800 placeholder:text-slate-400" placeholder="you@example.com">
+              </div>
+              <div>
+                <label for="phone" class="mb-2 block text-xs font-semibold text-slate-700">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" class="focus-ring w-full rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-800 placeholder:text-slate-400" placeholder="+977">
+              </div>
+            </div>
+            <div>
+              <label for="service" class="mb-2 block text-xs font-semibold text-slate-700">Area of interest</label>
+              <select id="service" name="service" class="focus-ring w-full rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-700">
+                <option value="Not sure yet">Select an area</option>
+                <option>Financial Modelling & Financing Support</option>
+                <option>Business Analysis & Decision Support</option>
+                <option>Accounting Systems & Process Design</option>
+                <option>Financial Information Organisation</option>
+                <option>Other / Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="mb-2 block text-xs font-semibold text-slate-700">How can we help? <span class="text-rose-600">*</span></label>
+              <textarea id="message" name="message" rows="4" required class="focus-ring w-full resize-y rounded-md border border-slate-300 bg-white px-3.5 py-3 text-sm text-slate-800 placeholder:text-slate-400" placeholder="Briefly describe your business requirement..."></textarea>
+            </div>
+            <button type="submit" class="focus-ring flex w-full items-center justify-center gap-2 rounded-md bg-navy px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-indigo">Prepare Enquiry <span aria-hidden="true">→</span></button>
+            <p id="formNote" class="text-[11px] leading-5 text-slate-500">This form opens your email application; it does not submit or store information on this website.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#101F33] text-slate-300">
+    <div class="mx-auto max-w-7xl px-5 py-12 sm:px-8">
+      <div class="flex flex-col justify-between gap-10 md:flex-row">
+        <div class="max-w-sm">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-md bg-white">
+              <img src="assets/favicon.png" alt="Gongpe Consulting" width="28" height="28" class="h-7 w-7 object-contain">
+            </span>
+            <span class="text-sm font-extrabold tracking-[.07em] text-white">GONGPE <span class="font-semibold text-blue-200">CONSULTING</span></span>
+          </div>
+          <p class="mt-4 text-xs leading-6 text-slate-400">Financial and business consulting focused on financial visibility, operational systems and informed business decisions.</p>
+          <p class="mt-3 text-[10px] font-semibold uppercase tracking-[.15em] text-slate-500">
+            A Practice of <a href="https://gongpe.com/" class="text-blue-200 hover:text-white underline-offset-2 hover:underline" rel="noopener">Gongpe Group</a>
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div>
+            <p class="text-xs font-semibold text-white">Explore</p>
+            <div class="mt-4 flex flex-col gap-3 text-xs text-slate-400">
+              <a class="hover:text-white" href="#capabilities">Capabilities</a>
+              <a class="hover:text-white" href="#approach">Our Approach</a>
+              <a class="hover:text-white" href="#practice">The Practice</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-white">Resources</p>
+            <div class="mt-4 flex flex-col gap-3 text-xs text-slate-400">
+              <a class="hover:text-white" href="#insights">Insights</a>
+              <a class="hover:text-white" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-white">Group</p>
+            <div class="mt-4 flex flex-col gap-3 text-xs text-slate-400">
+              <a class="hover:text-white" href="https://gongpe.com/" rel="noopener">Gongpe Group</a>
+              <p class="text-slate-500">Kathmandu, Nepal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[10px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <span>© <span id="year"></span> Gongpe Consulting. Part of <a href="https://gongpe.com/" class="hover:text-slate-300" rel="noopener">Gongpe Group</a>. All rights reserved.</span>
+        <a class="hover:text-slate-300" href="#home">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set this to the actual enquiry inbox before publishing.
+    const CONTACT_EMAIL = "support@gongpe.com";
+
+    // Mobile menu
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOpenIcon = document.getElementById('menuOpenIcon');
+    const menuCloseIcon = document.getElementById('menuCloseIcon');
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      menuOpenIcon.classList.remove('hidden');
+      menuCloseIcon.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuOpenIcon.classList.add('hidden');
+        menuCloseIcon.classList.remove('hidden');
+        menuButton.setAttribute('aria-expanded', 'true');
+        menuButton.setAttribute('aria-label', 'Close navigation');
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Enquiry form
+    document.getElementById('enquiryForm').addEventListener('submit', event => {
+      event.preventDefault();
+      if (!event.currentTarget.reportValidity()) return;
+
+      if (CONTACT_EMAIL === 'YOUR_ENQUIRY_EMAIL_HERE') {
+        alert('Before publishing, add your enquiry email in the CONTACT_EMAIL setting near the bottom of this HTML file.');
+        return;
+      }
+
+      const data = new FormData(event.currentTarget);
+      const subject = `Website enquiry — ${data.get('name')}`;
+      const body = [
+        `Name: ${data.get('name')}`,
+        `Organisation: ${data.get('company') || 'Not provided'}`,
+        `Email: ${data.get('email')}`,
+        `Phone: ${data.get('phone') || 'Not provided'}`,
+        `Area of interest: ${data.get('service')}`,
+        '',
+        'Requirement:',
+        data.get('message')
+      ].join('\n');
+
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+
+    // Accordion for Insights
+    document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+        const content = document.getElementById(trigger.getAttribute('aria-controls'));
+
+        // Close other open accordions (optional single-open behaviour)
+        document.querySelectorAll('.accordion-trigger').forEach(other => {
+          if (other !== trigger) {
+            other.setAttribute('aria-expanded', 'false');
+            const otherContent = document.getElementById(other.getAttribute('aria-controls'));
+            if (otherContent) otherContent.classList.remove('open');
+          }
+        });
+
+        trigger.setAttribute('aria-expanded', String(!expanded));
+        if (content) {
+          content.classList.toggle('open', !expanded);
+        }
+      });
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
